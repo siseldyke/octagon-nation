@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e0e0e0; /* Light background color */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #333; /* Dark header */
+    padding: 15px 0; /* Padding for spacing */
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 20px; /* More spacing between items */
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600; /* Slightly lighter weight */
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+header ul li a:hover {
+    background-color: #4CAF50; /* Green hover effect */
+    color: #fff; /* White text on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+    min-height: 80vh;
+    background-color: #fff; /* White background for content */
+    border-radius: 12px; /* Rounded corners for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 60px; /* Space for footer */
+}
+
+/* Content Title */
+h1 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
