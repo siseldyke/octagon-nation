@@ -9,25 +9,24 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">Fighters</a></li>
-                <li><a href="">Events</a></li>
+                <li><a href="{% url 'events' %}">Events</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
+   
     <main>
         {% block content %}
         <!-- Page specific content will go here -->
         {% endblock %}
     </main>
 
-    <!-- Footer Section -->
+    
     <footer>
         <p>&copy; 2024 Octagon Nation. All rights reserved.</p>
     </footer>
