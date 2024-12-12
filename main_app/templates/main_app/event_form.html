@@ -17,7 +17,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }} 
-    <button type="submit">Create Event</button>
+    <button type="submit">Submit</button>
 </form>
 
 <a href="{% url 'events' %}">Back to All Events</a>

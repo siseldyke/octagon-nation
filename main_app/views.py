@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.shortcuts import get_object_or_404
 from .models import Event
@@ -28,4 +28,8 @@ class EventCreate(CreateView):
 class EventUpdate(UpdateView):
     model = Event
     fields = ['attendees', 'location', 'date']
+    success_url = '/events/'
+
+class EventDelete(DeleteView):
+    model = Event
     success_url = '/events/'

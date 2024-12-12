@@ -12,6 +12,7 @@
 <p><strong>Number of Attendees:</strong> {{ event.attendees }}</p>
 <div class="event-actions">
     <a href="{% url 'event-update' event.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'event-delete' event.id %}" class="btn danger">Delete</a>
   </div>
 <h2>Fighters</h2>
 <ul>
