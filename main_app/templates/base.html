@@ -12,9 +12,13 @@
     <header>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="">Fighters</a></li>
                 <li><a href="{% url 'events' %}">Events</a></li>
+                {% else %}
+                <li><a href="{% url 'home' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

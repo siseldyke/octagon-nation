@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% block head%}
+{% if not user.is_authenticated%}
 <html>
 <body>
   <h1>Octagon Nation</h1>
@@ -8,7 +9,17 @@
     
     <button type="submit">Sign Up</button>
   </form>
-  <a href="">Sign In</a>
+  
+  <section>
+    <form action="{% url 'home' %}" method="post" class="login">
+      <h1>Login</h1>
+      {% csrf_token %} {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <button type="submit" class="btn submit">Login</button>
+    </form>
+  </section>
 </body>
 </html>
+{% endif %}
+{% endblock %}
 
