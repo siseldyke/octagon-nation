@@ -7,5 +7,6 @@ urlpatterns = [
     path('events/', views.event_index, name='events'),
     path('events/<int:event_id>/', views.event_detail, name='event_detail'),
     path('events/create/', views.EventCreate.as_view(), name='event-create'),
+    path('events/<int:pk>/update/', views.EventUpdate.as_view(), name='event-update'),
 
 ]

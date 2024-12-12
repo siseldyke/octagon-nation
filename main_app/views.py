@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.views import LoginView
 from django.shortcuts import get_object_or_404
 from .models import Event
@@ -23,4 +23,9 @@ class EventCreate(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    success_url = '/events/'
+
+class EventUpdate(UpdateView):
+    model = Event
+    fields = ['attendees', 'location', 'date']
     success_url = '/events/'
