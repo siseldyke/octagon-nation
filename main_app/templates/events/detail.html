@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/event-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>{{ event.name }}</h1>
+<p><strong>Date:</strong> {{ event.date }}</p>
+<p><strong>Location:</strong> {{ event.location }}</p>
+<p><strong>Number of Attendees:</strong> {{ event.num_attendees }}</p>
+
+<h2>Fighters</h2>
+<ul>
+    <!-- {% for fighter in event.fighters.all %}
+        <li>{{ fighter.name }} ({{ fighter.weight_class }} lbs)</li>
+    {% endfor %} -->
+</ul>
+
+<a href="{% url 'events' %}">All Events</a>
+{% endblock %}
