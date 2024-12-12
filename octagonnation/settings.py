@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-LOGIN_REDIRECT_URL = 'event-index'
+LOGIN_REDIRECT_URL = 'profile'
 
 LOGOUT_REDIRECT_URL = 'home'
 # Default primary key field type

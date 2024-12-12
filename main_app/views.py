@@ -43,6 +43,7 @@ class EventDelete(DeleteView):
 @login_required
 def profile_view(request):
     return render(request, 'profile/index.html')
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
