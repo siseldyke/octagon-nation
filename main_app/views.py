@@ -13,16 +13,17 @@ from django.contrib.auth.forms import UserCreationForm
 
 class Home(LoginView):
     template_name = 'home.html'
-
+@login_required
 def event_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})
 
+@login_required
 def event_detail(request, event_id):
     event = Event.objects.get(id=event_id)
     return render(request, 'events/detail.html', {'event': event})
 
-class EventCreate(CreateView):
+class EventCreate(LoginRequiredMixin, CreateView):
     model = Event
     fields = ['name', 'attendees', 'location', 'date']
 
@@ -31,12 +32,12 @@ class EventCreate(CreateView):
         return super().form_valid(form)
     success_url = '/events/'
 
-class EventUpdate(UpdateView):
+class EventUpdate(LoginRequiredMixin, UpdateView):
     model = Event
     fields = ['attendees', 'location', 'date']
     success_url = '/events/'
 
-class EventDelete(DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = '/events/'
 
