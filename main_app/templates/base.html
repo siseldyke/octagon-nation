@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
                 <li><a href="">Fighters</a></li>
                 <li><a href="{% url 'events' %}">Events</a></li>
                 {% else %}

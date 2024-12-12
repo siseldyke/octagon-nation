@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>User Profile</h1>
+    
+    <div class="profile-container">
+        <div class="profile-pic">
+            {% if user_profile.profile_pic %}
+                <img src="{{ user_profile.profile_pic.url }}" alt="Profile Picture">
+            {% else %}
+                <p>No profile picture</p>
+            {% endif %}
+        </div>
+        
+        <div class="basic-info">
+            <h3>Basic Info</h3>
+            <p>{{ user_profile.basic_info }}</p>
+        </div>
+        
+        <div class="followed-fighters">
+            <h3>Followed Fighters</h3>
+            <ul>
+                <!-- Loop through followed fighters here -->
+            </ul>
+        </div>
+    </div>
+
+    <h2>Edit Profile</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}
