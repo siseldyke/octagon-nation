@@ -7,6 +7,9 @@
 
 {% block content %}
 <h1>All Events</h1>
+    <a href="{% url 'event-create' %}">
+        <button id="addEventButton">New Event</button>
+    </a>
 <ul>
     {% for event in events %}
         <li>

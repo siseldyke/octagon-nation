@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Create New Event</h1>
+
+<!-- The form for creating a new event -->
+<form method="POST">
+    {% csrf_token %}
+    
+    <!-- The form fields rendered here -->
+    {{ form.as_p }} 
+
+    <!-- Submit button -->
+    <button type="submit">Create Event</button>
+</form>
+
+<!-- Link to go back to the events index -->
+<a href="{% url 'events' %}">Back to All Events</a>
+{% endblock %}
