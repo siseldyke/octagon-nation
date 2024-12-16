@@ -8,6 +8,7 @@ from .models import Event
 from .forms import UserProfileForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import PermissionDenied
 
 
 
@@ -36,11 +37,24 @@ class EventUpdate(LoginRequiredMixin, UpdateView):
     model = Event
     fields = ['attendees', 'location', 'date']
     success_url = '/events/'
+    def get_object(self, queryset=None):
+        
+        obj = super().get_object(queryset)
+        
+        if obj.user != self.request.user:
+             raise PermissionDenied("You are not allowed to edit this event.")
+        return obj
 
 class EventDelete(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = '/events/'
-
+    def get_object(self, queryset=None):
+        
+        obj = super().get_object(queryset)
+        
+        if obj.user != self.request.user:
+             raise PermissionDenied("You are not allowed to delete this event.")
+        return obj
 @login_required
 def profile_view(request):
     return render(request, 'profile/index.html')
