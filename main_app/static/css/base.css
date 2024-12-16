@@ -8,15 +8,15 @@
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #e0e0e0; /* Light background color */
+    background-color: #e0e0e0; 
     color: #333;
     line-height: 1.6;
 }
 
 
 header {
-    background-color: #333; /* Dark header */
-    padding: 15px 0; /* Padding for spacing */
+    background-color: #333; 
+    padding: 15px 0; 
     text-align: center;
 }
 
@@ -33,14 +33,14 @@ header ul {
 }
 
 header ul li {
-    margin: 0 20px; /* More spacing between items */
+    margin: 0 20px; 
 }
 
 header ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
-    font-weight: 600; /* Slightly lighter weight */
+    font-weight: 600; 
     padding: 12px 25px;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -48,8 +48,8 @@ header ul li a {
 
 
 header ul li a:hover {
-    background-color: #4CAF50; /* Green hover effect */
-    color: #fff; /* White text on hover */
+    background-color: #4CAF50; 
+    color: #fff; 
 }
 
 
@@ -71,10 +71,10 @@ footer p {
 main {
     padding: 40px 20px;
     min-height: 80vh;
-    background-color: #fff; /* White background for content */
-    border-radius: 12px; /* Rounded corners for content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-bottom: 60px; /* Space for footer */
+    background-color: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 60px; 
 }
 
 
@@ -113,19 +113,30 @@ a:hover {
 }
 
 button, .btn {
-    background-color: #007BFF; /* Blue color */
-    color: #FFFFFF; /* White text */
+    background-color: #007BFF; 
+    color: #FFFFFF; 
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px; 
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    text-transform: uppercase; /* Uppercase text */
+    text-transform: uppercase; 
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover, .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect */
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+
+.welcome-header {
+    text-align: center; 
+    font-size: 2.5em; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    color: #333333; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
 }

@@ -1,26 +1,14 @@
 {% extends 'base.html' %}
-{% block head %}
-{% if not user.is_authenticated%}
-<html>
-<body>
-  <h1>Octagon Nation</h1>
-  <h2>Sign Up</h2>
-  <form method="POST">
-    
-    <button type="submit">Sign Up</button>
-  </form>
-  
-  <section>
-    <form action="{% url 'login' %}" method="post" class="login">
-      <h1>Login</h1>
-      {% csrf_token %} {{ form.as_p }}
-      <input type="hidden" name="next" value="{{ next }}" />
-      <button type="submit" class="btn submit">Login</button>
-    </form>
-  </section>
-  </body>
-</html>
 
-{% endif %}
+{% block content %}
+  {% if not user.is_authenticated %}
+    <h1 class="welcome-header">Welcome to Octagon Nation</h1>
+    <div class="image-container" style="text-align: center;">
+      <img src="https://cdn11.bigcommerce.com/s-7bmhz/images/stencil/1280x1280/products/437/793/via-UFC-10__46610.1590267481.jpg?c=2" 
+           alt="MMA Octagon" style="max-width: 100%; height: auto;">
+    </div>
+  {% else %}
+    <p>You are already logged in. Go to your <a href="{% url 'profile' %}">profile</a>.</p>
+  {% endif %}
 {% endblock %}
 
