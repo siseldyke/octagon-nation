@@ -5,6 +5,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Event
+from .forms import EventForm
 from .forms import UserProfileForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -14,6 +15,7 @@ from django.core.exceptions import PermissionDenied
 
 class Home(LoginView):
     template_name = 'home.html'
+    
 @login_required
 def event_index(request):
     events = Event.objects.all()
