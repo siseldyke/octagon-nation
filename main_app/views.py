@@ -15,7 +15,7 @@ from django.core.exceptions import PermissionDenied
 
 class Home(LoginView):
     template_name = 'home.html'
-    
+
 @login_required
 def event_index(request):
     events = Event.objects.all()
@@ -57,6 +57,7 @@ class EventDelete(LoginRequiredMixin, DeleteView):
         if obj.user != self.request.user:
              raise PermissionDenied("You are not allowed to delete this event.")
         return obj
+        
 @login_required
 def profile_view(request):
     return render(request, 'profile/index.html')

@@ -10,6 +10,7 @@
 <p><strong>Date:</strong> {{ event.date }}</p>
 <p><strong>Location:</strong> {{ event.location }}</p>
 <p><strong>Number of Attendees:</strong> {{ event.attendees }}</p>
+<p><strong>Created by:</strong> {{ user.id }}</p>
 <div class="event-actions">
     <a href="{% url 'event-update' event.id %}" class="btn warn">Edit</a>
     <a href="{% url 'event-delete' event.id %}" class="btn danger">Delete</a>
